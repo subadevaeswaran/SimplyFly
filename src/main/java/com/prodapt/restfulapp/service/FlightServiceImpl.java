@@ -23,8 +23,11 @@ import java.util.stream.Collectors;
 public class FlightServiceImpl implements FlightService {
 @Autowired
     private  FlightRepository flightRepository;
+    @Autowired
     private RouteRepository routeRepository;
+    @Autowired
     private UserRepository userRepository;
+    @Autowired
     private SeatRepository seatRepository;
 
     @Override
