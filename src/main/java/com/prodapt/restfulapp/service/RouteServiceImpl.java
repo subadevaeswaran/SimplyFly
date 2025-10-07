@@ -3,12 +3,15 @@ package com.prodapt.restfulapp.service;
 import com.prodapt.restfulapp.dto.AddRouteRequest;
 import com.prodapt.restfulapp.entity.Route;
 import com.prodapt.restfulapp.repository.RouteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class RouteServiceImpl implements RouteService{
-
+    @Autowired
     public RouteRepository routeRepository;
     @Override
     public String addRoute(AddRouteRequest routeDTO) {

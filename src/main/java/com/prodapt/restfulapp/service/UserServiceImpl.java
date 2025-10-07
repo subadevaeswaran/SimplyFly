@@ -14,9 +14,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements userService {
-
     private final UserRepository userRepository;
-
 
     @Override
     public String registerUser(RegisterRequest request) {
