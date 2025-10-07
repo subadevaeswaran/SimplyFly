@@ -5,10 +5,11 @@ import com.prodapt.restfulapp.entity.Flight;
 import  com.prodapt.restfulapp.entity.Route;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+@Repository
 public interface FlightRepository extends JpaRepository<Flight, Long> {
     List<Flight> findByRouteAndDepartureTimeBetween(Route route, LocalDateTime start, LocalDateTime end);
     List<Flight> findByRoute_OriginAndRoute_DestinationAndDepartureTimeBetween(

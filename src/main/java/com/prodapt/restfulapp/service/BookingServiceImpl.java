@@ -21,8 +21,11 @@ import java.util.stream.Collectors;
 public class BookingServiceImpl implements BookingService{
     @Autowired
     private BookingRepository repo;
+    @Autowired
     private FlightRepository flightRepository;
+    @Autowired
     private SeatRepository seatRepository;
+    @Autowired
     private UserRepository userRepository;
 
 
@@ -74,10 +77,18 @@ public class BookingServiceImpl implements BookingService{
 
 
     @Override
-    public BookingResponse getBookingDetailsById(BookingRequest req) {
-        User user= userRepository.findById(req.getFlightId()).orElse(null);
-        List<Booking> bookings= repo.findByUser(user);
-        return (BookingResponse) bookings.stream()
+    public List<BookingResponse> getBookingDetailsById(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found with id: " + userId));
+
+        // Fetch bookings by user
+        List<Booking> bookings = repo.findByUser(user);
+        if (bookings.isEmpty()) {
+            throw new RuntimeException("No bookings found for user ID: " + userId);
+        }
+
+        // Map each booking to a BookingResponse DTO
+        return bookings.stream()
                 .map(booking -> {
                     Flight flight = booking.getFlight();
                     return new BookingResponse(

@@ -11,7 +11,7 @@ public interface BookingService {
 
 
 
-    public BookingResponse getBookingDetailsById(BookingRequest req);
+    public List<BookingResponse> getBookingDetailsById(Long userId);
         public List<BookingResponse> getAllBookings();
     public String cancelBookingById(Long bookingId,String username);
 }
