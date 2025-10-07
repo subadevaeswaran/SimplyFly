@@ -1,0 +1,14 @@
+package com.prodapt.restfulapp.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class SeatDTO {
+    private Long id;
+    private String seatNumber;
+    private boolean isBooked;
+}
