@@ -4,6 +4,7 @@ package com.prodapt.restfulapp.service;
 
 import com.prodapt.restfulapp.dto.RegisterRequest;
 import com.prodapt.restfulapp.entity.User;
+import com.prodapt.restfulapp.enums.Role;
 import com.prodapt.restfulapp.repository.UserRepository;
 import com.prodapt.restfulapp.service.userService;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +29,11 @@ public class UserServiceImpl implements userService {
         user.setPassword(request.getPassword());
         user.setContactNumber(request.getContactNumber());
         user.setAddress(request.getAddress());
-        user.setRole(request.getRole());
+        if(request.getRole() == null) {
+            user.setRole(Role.USER);
+        } else {
+            user.setRole(request.getRole());
+        }
 
 
         userRepository.save(user);

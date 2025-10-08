@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
-
+@CrossOrigin(origins = "http://localhost:5173")
 public class UserController {
     @Autowired
     private userService service;
@@ -24,6 +24,7 @@ public class UserController {
         return ResponseEntity.ok(res);
 
     }
+
 
     @PutMapping("/update/{email}")
     public ResponseEntity<User> updateUser(@PathVariable("email") String email , @RequestBody User updateUser){
