@@ -13,6 +13,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/flights")
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class FlightController {
     // Define flight-related endpoints here
     @Autowired

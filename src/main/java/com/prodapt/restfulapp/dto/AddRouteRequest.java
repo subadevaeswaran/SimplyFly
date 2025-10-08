@@ -8,6 +8,6 @@ import lombok.*;
 public class AddRouteRequest {
     private String origin;
     private String destination;
-    private int distanceInKm;
+    private String distanceInKm;
     private String duration; // e.g., "2h 45m"
 }
