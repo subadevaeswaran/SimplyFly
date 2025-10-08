@@ -26,7 +26,7 @@ public class Seat {
     private String status;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "flight_id", nullable = false)
+    @JoinColumn(name = "flight_id", nullable = false, foreignKey = @ForeignKey(name = "fk_seat_flight_id", foreignKeyDefinition = "FOREIGN KEY (flight_id) REFERENCES flights(id) ON DELETE CASCADE"))
     @JsonIgnore
     private Flight flight;
 
