@@ -79,6 +79,8 @@ public class FlightServiceImpl implements FlightService {
                         flight.getFlightName(),
                         flight.getRoute().getOrigin(),
                         flight.getRoute().getDestination(),
+                        flight.getRoute().getDistanceInKm(),
+                        flight.getRoute().getDuration(),
                         flight.getFare(),
                         flight.getDepartureTime(),
                         flight.getArrivalTime()
@@ -103,6 +105,8 @@ public class FlightServiceImpl implements FlightService {
                         flight.getFlightName(),
                         flight.getRoute().getOrigin(),
                         flight.getRoute().getDestination(),
+                        flight.getRoute().getDistanceInKm(),
+                        flight.getRoute().getDuration(),
                         flight.getFare(),
                         flight.getDepartureTime(),
                         flight.getArrivalTime()
@@ -128,6 +132,8 @@ public class FlightServiceImpl implements FlightService {
                 flight.getFlightName(),
                 flight.getRoute().getOrigin(),
                 flight.getRoute().getDestination(),
+                flight.getRoute().getDistanceInKm(),
+                flight.getRoute().getDuration(),
                 flight.getFare(),
                 flight.getDepartureTime(),
                 flight.getArrivalTime()

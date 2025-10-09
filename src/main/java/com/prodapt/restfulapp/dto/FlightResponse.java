@@ -1,5 +1,6 @@
 package com.prodapt.restfulapp.dto;
 
+import com.prodapt.restfulapp.entity.Route;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -13,7 +14,10 @@ public class FlightResponse {
     private String flightName;
     private String origin;
     private String destination;
+    private String distanceInKm;
+    private String duration;
     private double fare;
     private LocalDateTime departureTime;
     private LocalDateTime arrivalTime;
+
 }

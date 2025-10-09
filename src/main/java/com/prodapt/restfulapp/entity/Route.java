@@ -18,7 +18,7 @@ public class Route {
     private String destination;
     
     @Column(name = "distance")
-    private int distanceInKm;
+    private String distanceInKm;
     
     private String duration; // Format: "2h 30m"
 }

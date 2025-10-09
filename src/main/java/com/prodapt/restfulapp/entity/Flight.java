@@ -23,9 +23,9 @@ public class Flight {
     private String flightNumber;
     private String flightName;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "route_id")
-    @JsonIgnore
+
     private Route route;
 
     private int totalSeats;
