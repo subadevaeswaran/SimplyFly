@@ -6,6 +6,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AddRouteRequest {
+    private Long id;
     private String origin;
     private String destination;
     private String distanceInKm;
