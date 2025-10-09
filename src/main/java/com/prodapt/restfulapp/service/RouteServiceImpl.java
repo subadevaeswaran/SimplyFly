@@ -34,6 +34,7 @@ public class RouteServiceImpl implements RouteService{
     public List<AddRouteRequest> getAllRoutes() {
         return routeRepository.findAll().stream().map(route ->
                 new AddRouteRequest(
+                        route.getId(),
                         route.getOrigin(),
                         route.getDestination(),
                         route.getDistanceInKm(),

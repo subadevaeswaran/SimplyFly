@@ -16,7 +16,8 @@ import java.util.List;
 import java.util.Set;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@RequestMapping("/routes")
+@CrossOrigin(origins = "http://localhost:3000")
 public class RouteController {
     @Autowired
     private RouteService routeService;
@@ -29,7 +30,7 @@ public class RouteController {
         return ResponseEntity.status(HttpStatus.CREATED).body("Route Created Successfully");
     }
 
-    @GetMapping
+    @GetMapping("/getAll")
     public ResponseEntity<List<AddRouteRequest>> getAllRoutes() {
         List<AddRouteRequest> routes = routeService.getAllRoutes();
         return ResponseEntity.ok(routes);
